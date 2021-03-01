@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  align-items: center;
+  background: -webkit-gradient(
+  linear,
+  left top,
+  left bottom,
+  from(rgba(100, 100, 100, .2)),
+  color-stop(40%, rgba(255, 255, 255, .5)),
+  to(#fff)
+  );
+  background: linear-gradient(to bottom, rgba(100, 100, 100, .2) 0%, rgba(255, 255, 255, .5) 40%, #fff 100%);
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.ball{
+  background: radial-gradient(circle, #666 10%, #000 100%);
+  border-radius: 50%;
+  height: 250px;
+  position: relative;
+  width: 250px;
+  z-index: 1;
+}
+
+.ball::before,
+.ball::after{
+  border-radius: 50%;
+  content: "";
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: 1%;
+}
+
+.ball::before{
+  background: radial-gradient(circle at 50% 0px, #fff, transparent 60%);
+  height: 90%;
+  left: 5%;
+  width: 90%;
+}
+
+.ball::after{
+  background: radial-gradient(circle at 50% 50%, #fff, transparent 25%);
+  height: 100%;
+  left: 10%;
+  -webkit-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  width: 100%;
+}
+
+.shadow{
+  background: radial-gradient(circle, #000 10%, #fff 120%);
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  height: 25px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(calc(-50% + 120px));
+  transform: translateY(calc(-50% + 120px));
+  width: 260px;
+  z-index: 0;
+}
