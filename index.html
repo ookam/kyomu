@@ -4,31 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+			body { margin: 0; overflow: hidden; }
+			@font-face {
+				font-family: "7segment";
+				src: url("./fonts/DSEG7Classic-Bold.woff"); /* https://www.keshikan.net/fonts.html */
+			}
+		</style>
+		<script src="./js/room.js" type="module"></script>
     <title>Document</title>
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <div class="ball"></div>
-        <div class="shadow"></div>
-        <div class="time"></div>
-        <div class="room">
-          <div class="face face-xz top"></div>
-          <div class="face face-xz bottom"></div>
-          <div class="face face-xy back"></div>
-          <div class="face face-zy left"></div>
-          <div class="face face-zy right"></div>
-        </div>
-      </div>
-    </section>
-    <script>
-      function time(){
-        var now = new Date();
-        document.getElementsByClassName("time")[0].innerHTML = now.toLocaleTimeString();
-      }
-      time()
-      setInterval("time()", 1000);
-    </script>
+		<span style="font-family:'7segment';"></span><!-- 7segment font ちらつき防止 -->
   </body>
 </html>
